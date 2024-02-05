@@ -4,6 +4,7 @@ import os
 from shell import Command
 from config.commands import *
 
+
 class Config:
     def __init__(self):
         self._app_name = "LocalProjectManager"
@@ -11,6 +12,7 @@ class Config:
         self._app_config_file = os.path.join(self._app_config_dir, "config.json")
         self._config = {}
         self._commands = []
+        self._processes = []
         self.__initialize_dir()
         self.__initialize_config_file()
         self._load_config()
@@ -67,6 +69,9 @@ def initialize_commands(shell, config):
         Command("config", lambda: fn_config(config)),
         Command("add", lambda *args: fn_add_project_path(config, *args)),
         Command("rm", lambda *args: fn_remove_project_path(config, *args)),
+        Command("clear", lambda: fn_clear()),
+        Command("open", lambda num: open_project(num, config)),
+        Command("gui", lambda: open_gui(config)),
         Command("help", lambda: fn_welcome())
     ]
     for command in commands:
