@@ -9,7 +9,7 @@ Project Manager is a personal project management tool designed to help you manag
 To install Project Manager, follow these steps:
 
 ```bash
-git clone [https://github.com/yourusername/project-manager.git](https://github.com/pablopelardas/cli-project-manager)https://github.com/pablopelardas/cli-project-manager.git
+git clone https://github.com/pablopelardas/cli-project-manager.git
 cd cli-project-manager
 pip install -r requirements.txt
 python src/main.py
